@@ -37,73 +37,73 @@ CURRENCIES = {
 
 # Checking Account Status
 CHECKING_OPTIONS = {
-    'A11': '❌ Negative Balance (Overdrawn)',
-    'A12': '💰 Low Balance (0 - 5,000 PKR)',
-    'A13': '✅ Good Balance (> 5,000 PKR)',
-    'A14': '🚫 No Checking Account'
+    'A11': 'Negative Balance (Overdrawn)',
+    'A12': 'Low Balance (0 - 5,000 PKR)',
+    'A13': 'Good Balance (> 5,000 PKR)',
+    'A14': 'No Checking Account'
 }
 
 # Credit History
 CREDIT_HISTORY_OPTIONS = {
-    'A30': '🆕 No Credit History',
-    'A31': '✅ All Credits Paid (Excellent)',
-    'A32': '👍 Existing Credits Paid (Good)',
-    'A33': '⚠️ Delayed Payments (Fair)',
-    'A34': '🚫 Critical Account (Bad)'
+    'A30': 'No Credit History',
+    'A31': 'All Credits Paid (Excellent)',
+    'A32': 'Existing Credits Paid (Good)',
+    'A33': 'Delayed Payments (Fair)',
+    'A34': 'Critical Account (Bad)'
 }
 
 # Loan Purpose
 PURPOSE_OPTIONS = {
-    'A40': '🚗 Car (New)',
-    'A41': '🚙 Car (Used)',
-    'A42': '🛋️ Furniture / Home Appliances',
-    'A43': '📺 Electronics / TV / Mobile',
-    'A44': '💻 Laptop / Computer',
-    'A45': '📚 Education / Student Loan',
-    'A46': '🏢 Business / Startup',
-    'A47': '🏠 Home Renovation',
-    'A48': '💍 Wedding / Event',
-    'A49': '🏥 Medical / Emergency',
-    'A410': '✈️ Travel / Other'
+    'A40': 'Car (New)',
+    'A41': 'Car (Used)',
+    'A42': 'Furniture / Home Appliances',
+    'A43': 'Electronics / TV / Mobile',
+    'A44': 'Laptop / Computer',
+    'A45': 'Education / Student Loan',
+    'A46': 'Business / Startup',
+    'A47': 'Home Renovation',
+    'A48': 'Wedding / Event',
+    'A49': 'Medical / Emergency',
+    'A410': 'Travel / Other'
 }
 
 # Savings Account
 SAVINGS_OPTIONS = {
-    'A61': '❌ No Savings',
-    'A62': '💵 Low Savings (< 10,000 PKR)',
-    'A63': '💰 Medium Savings (10K - 50K)',
-    'A64': '💎 High Savings (50K - 100K)',
-    'A65': '🏆 Very High Savings (> 100K)'
+    'A61': 'No Savings',
+    'A62': 'Low Savings (< 10,000 PKR)',
+    'A63': 'Medium Savings (10K - 50K)',
+    'A64': 'High Savings (50K - 100K)',
+    'A65': 'Very High Savings (> 100K)'
 }
 
 # Employment Status
 EMPLOYMENT_OPTIONS = {
-    'A71': '🚫 Unemployed',
-    'A72': '👶 New Job (< 1 Year)',
-    'A73': '📈 Junior (1 - 4 Years)',
-    'A74': '💼 Senior (4 - 7 Years)',
-    'A75': '🏆 Expert (> 7 Years)'
+    'A71': 'Unemployed',
+    'A72': 'New Job (< 1 Year)',
+    'A73': 'Junior (1 - 4 Years)',
+    'A74': 'Senior (4 - 7 Years)',
+    'A75': 'Expert (> 7 Years)'
 }
 
 # Property Type
 PROPERTY_OPTIONS = {
-    'A121': '🏠 Own House / Plot',
-    'A122': '🏢 Apartment / Flat',
-    'A123': '🚗 Vehicle / Asset',
-    'A124': '❌ No Property'
+    'A121': 'Own House / Plot',
+    'A122': 'Apartment / Flat',
+    'A123': 'Vehicle / Asset',
+    'A124': 'No Property'
 }
 
 # Other Debtors
 DEBTORS_OPTIONS = {
-    'A101': '🚫 None (Single Applicant)',
-    'A102': '👥 Co-Applicant (Joint)',
-    'A103': '🛡️ Guarantor Available'
+    'A101': 'None (Single Applicant)',
+    'A102': 'Co-Applicant (Joint)',
+    'A103': 'Guarantor Available'
 }
 
 # Telephone
 TELEPHONE_OPTIONS = {
-    'A191': '❌ No Phone',
-    'A192': '✅ Phone Registered'
+    'A191': 'No Phone',
+    'A192': 'Phone Registered'
 }
 
 # ============================================================
@@ -111,7 +111,7 @@ TELEPHONE_OPTIONS = {
 # ============================================================
 st.set_page_config(
     page_title='Loan Default Predictor',
-    page_icon='🏦',
+    page_icon='💼',
     layout='wide',
     initial_sidebar_state='expanded'
 )
@@ -128,17 +128,17 @@ st.markdown(f"""
 </style>
 """, unsafe_allow_html=True)
 
-st.title('🏦 Loan Default Prediction')
+st.title('Loan Default Prediction')
 st.markdown(f"<p style='color: {TEXT_COLOR}; font-size: 18px;'>Pakistan Banking Credit Risk Assessment System</p>", unsafe_allow_html=True)
 st.markdown("---")
 
 # ============================================================
 # SIDEBAR
 # ============================================================
-st.sidebar.header('⚙️ Settings')
+st.sidebar.header('Settings')
 
 selected_currency = st.sidebar.selectbox(
-    '💱 Select Currency',
+    'Select Currency',
     list(CURRENCIES.keys()),
     format_func=lambda x: f"{CURRENCIES[x]['symbol']} {x} - {CURRENCIES[x]['name']}"
 )
@@ -150,7 +150,7 @@ CONVERSION_RATE = currency['rate']
 
 st.sidebar.info(f"1 DM = {CURRENCY_SYMBOL}{CONVERSION_RATE:,.2f} {CURRENCY}")
 
-theme = st.sidebar.selectbox('🎨 Theme', ['Default Blue', 'Pink', 'Dark Mode', 'Purple', 'Green'])
+theme = st.sidebar.selectbox('Theme', ['Default Blue', 'Pink', 'Dark Mode', 'Purple', 'Green'])
 
 if theme == 'Pink':
     PRIMARY_COLOR = "#e91e63"; SUCCESS_COLOR = "#f8bbd0"; DANGER_COLOR = "#880e4f"; SECONDARY_COLOR = "#f48fb1"
@@ -178,12 +178,12 @@ model, scaler = load_model()
 # ============================================================
 
 with st.form('loan_form'):
-    st.subheader('📋 Applicant Information')
+    st.subheader('Applicant Information')
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.markdown(f"<h4 style='color: {PRIMARY_COLOR};'>🏦 Account Details</h4>", unsafe_allow_html=True)
+        st.markdown(f"<h4 style='color: {PRIMARY_COLOR};'>Account Details</h4>", unsafe_allow_html=True)
         
         checking_display = st.selectbox(
             'Checking Account Status',
@@ -203,12 +203,12 @@ with st.form('loan_form'):
         )
         employment = [k for k, v in EMPLOYMENT_OPTIONS.items() if v == employment_display][0]
         
-        age = st.slider('🎂 Age', 19, 75, 35)
+        age = st.slider('Age', 19, 75, 35)
         
     with col2:
-        st.markdown(f"<h4 style='color: {PRIMARY_COLOR};'>💰 Loan Details</h4>", unsafe_allow_html=True)
+        st.markdown(f"<h4 style='color: {PRIMARY_COLOR};'>Loan Details</h4>", unsafe_allow_html=True)
         
-        duration = st.slider('📅 Duration (months)', 4, 72, 18)
+        duration = st.slider('Duration (months)', 4, 72, 18)
         
         credit_history_display = st.selectbox(
             'Credit History',
@@ -229,7 +229,7 @@ with st.form('loan_form'):
         step = max(int(1000 * CONVERSION_RATE), 1)
         
         credit_amount_local = st.number_input(
-            f'💵 Credit Amount ({CURRENCY_SYMBOL})',
+            f'Credit Amount ({CURRENCY_SYMBOL})',
             min_value=min_amount,
             max_value=max_amount,
             value=default_amount,
@@ -238,9 +238,9 @@ with st.form('loan_form'):
         credit_amount_dm = credit_amount_local / CONVERSION_RATE
         
     with col3:
-        st.markdown(f"<h4 style='color: {PRIMARY_COLOR};'>🏠 Additional Info</h4>", unsafe_allow_html=True)
+        st.markdown(f"<h4 style='color: {PRIMARY_COLOR};'>Additional Info</h4>", unsafe_allow_html=True)
         
-        installment_rate = st.slider('📈 Installment Rate (% of income)', 1, 4, 2)
+        installment_rate = st.slider('Installment Rate (% of income)', 1, 4, 2)
         
         property_display = st.selectbox(
             'Property Ownership',
@@ -263,7 +263,7 @@ with st.form('loan_form'):
     # Submit button
     col_submit1, col_submit2, col_submit3 = st.columns([1, 2, 1])
     with col_submit2:
-        submitted = st.form_submit_button('🔮 Predict Default Risk')
+        submitted = st.form_submit_button('Predict Default Risk')
 
 # ============================================================
 # RESULTS
@@ -271,7 +271,7 @@ with st.form('loan_form'):
 
 if submitted:
     st.markdown("---")
-    st.info('🔄 Processing prediction...')
+    st.info('Processing prediction...')
     
     # Amount cards
     col_card1, col_card2, col_card3 = st.columns(3)
@@ -333,7 +333,7 @@ if submitted:
     
     # Result
     st.markdown("---")
-    st.subheader("🎯 Prediction Result")
+    st.subheader("Prediction Result")
     
     col_result1, col_result2 = st.columns([2, 1])
     
@@ -341,32 +341,32 @@ if submitted:
         if risk_score > 0.7:
             st.markdown(f"""
             <div style='background-color: {DANGER_COLOR}20; padding: 30px; border-radius: 15px; border: 3px solid {DANGER_COLOR}; text-align: center;'>
-                <h1 style='color: {DANGER_COLOR}; margin: 0;'>⚠️ HIGH RISK</h1>
+                <h1 style='color: {DANGER_COLOR}; margin: 0;'>HIGH RISK</h1>
                 <p style='font-size: 48px; font-weight: bold; color: {DANGER_COLOR}; margin: 10px 0;'>{risk_score*100:.1f}%</p>
                 <p style='color: {TEXT_COLOR}; font-size: 18px;'>Default Probability</p>
             </div>
             """, unsafe_allow_html=True)
-            st.error("🚫 **Recommendation:** Reject application or require significant collateral")
+            st.error("**Recommendation:** Reject application or require significant collateral")
             
         elif risk_score > 0.4:
             st.markdown(f"""
             <div style='background-color: {WARNING_COLOR}20; padding: 30px; border-radius: 15px; border: 3px solid {WARNING_COLOR}; text-align: center;'>
-                <h1 style='color: {WARNING_COLOR}; margin: 0;'>⚡ MEDIUM RISK</h1>
+                <h1 style='color: {WARNING_COLOR}; margin: 0;'>MEDIUM RISK</h1>
                 <p style='font-size: 48px; font-weight: bold; color: {WARNING_COLOR}; margin: 10px 0;'>{risk_score*100:.1f}%</p>
                 <p style='color: {TEXT_COLOR}; font-size: 18px;'>Default Probability</p>
             </div>
             """, unsafe_allow_html=True)
-            st.warning("⚠️ **Recommendation:** Request additional documentation or guarantor")
+            st.warning("**Recommendation:** Request additional documentation or guarantor")
             
         else:
             st.markdown(f"""
             <div style='background-color: {SUCCESS_COLOR}20; padding: 30px; border-radius: 15px; border: 3px solid {SUCCESS_COLOR}; text-align: center;'>
-                <h1 style='color: {SUCCESS_COLOR}; margin: 0;'>✅ LOW RISK</h1>
+                <h1 style='color: {SUCCESS_COLOR}; margin: 0;'>LOW RISK</h1>
                 <p style='font-size: 48px; font-weight: bold; color: {SUCCESS_COLOR}; margin: 10px 0;'>{risk_score*100:.1f}%</p>
                 <p style='color: {TEXT_COLOR}; font-size: 18px;'>Default Probability</p>
             </div>
             """, unsafe_allow_html=True)
-            st.success("✅ **Recommendation:** Approve loan")
+            st.success("**Recommendation:** Approve loan")
     
     with col_result2:
         st.markdown(f"""
@@ -382,34 +382,34 @@ if submitted:
     
     # Risk factors with Pakistani context
     st.markdown("---")
-    st.subheader("📋 Risk Factor Analysis")
+    st.subheader("Risk Factor Analysis")
     
     factors = []
     factor_colors = []
     
     if duration > 24:
-        factors.append("⏱️ Long duration (>24 months) - Higher default risk in Pakistan")
+        factors.append("Long duration (>24 months) - Higher default risk in Pakistan")
         factor_colors.append(WARNING_COLOR)
     if credit_amount_dm > 5000:
-        factors.append(f"💰 High loan amount (>{CURRENCY_SYMBOL}{int(5000*CONVERSION_RATE):,}) - Exceeds average Pakistani income")
+        factors.append(f"High loan amount (>{CURRENCY_SYMBOL}{int(5000*CONVERSION_RATE):,}) - Exceeds average Pakistani income")
         factor_colors.append(DANGER_COLOR)
     if age < 25:
-        factors.append("🎂 Young borrower (<25 years) - Limited credit history in Pakistan")
+        factors.append("Young borrower (<25 years) - Limited credit history in Pakistan")
         factor_colors.append(WARNING_COLOR)
     if checking == 'A11':
-        factors.append("🏦 Negative checking balance - Overdraft behavior detected")
+        factors.append("Negative checking balance - Overdraft behavior detected")
         factor_colors.append(DANGER_COLOR)
     if credit_history in ['A33', 'A34']:
-        factors.append("📊 Poor credit history - Previous defaults recorded")
+        factors.append("Poor credit history - Previous defaults recorded")
         factor_colors.append(DANGER_COLOR)
     if savings == 'A65':
-        factors.append("💰 No savings account - No financial cushion")
+        factors.append("No savings account - No financial cushion")
         factor_colors.append(WARNING_COLOR)
     if employment == 'A71':
-        factors.append("💼 Unemployed - No stable income source")
+        factors.append("Unemployed - No stable income source")
         factor_colors.append(DANGER_COLOR)
     if property == 'A124':
-        factors.append("❌ No property - No collateral available")
+        factors.append("No property - No collateral available")
         factor_colors.append(WARNING_COLOR)
     
     if factors:
@@ -424,7 +424,7 @@ if submitted:
     else:
         st.markdown(f"""
         <div style='background-color: {SUCCESS_COLOR}15; padding: 20px; border-radius: 10px; text-align: center;'>
-            <p style='color: {SUCCESS_COLOR}; font-size: 18px; margin: 0;'>✅ No major risk factors identified</p>
+            <p style='color: {SUCCESS_COLOR}; font-size: 18px; margin: 0;'>No major risk factors identified</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -432,7 +432,7 @@ if submitted:
 st.markdown("---")
 st.markdown(f"""
 <div style='text-align: center; color: gray; padding: 20px;'>
-    <p>🏦 Pakistan Banking Credit Risk System</p>
+    <p>Pakistan Banking Credit Risk System</p>
     <p>Data Science Mini Project | UET Peshawar</p>
     <p>Currency: {CURRENCY_SYMBOL} {CURRENCY} | Theme: {theme}</p>
 </div>
